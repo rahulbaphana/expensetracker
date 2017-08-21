@@ -1,0 +1,10 @@
+language: scala
+scala:
+   - 2.12.2
+
+sudo: required
+dist: precise
+
+script:
+  - sbt clean compile
+  - sbt test
