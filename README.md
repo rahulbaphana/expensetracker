@@ -1,3 +1,5 @@
+![build-status](https://travis-ci.org/rahulbaphana/expensetracker.svg?branch=master)
+
 This is your new Play application
 =================================
 
