@@ -8,6 +8,15 @@ scala:
 
 sudo: required
 dist: precise
+#
+#script:
+#  - sbt clean compile test
 
-script:
-  - sbt clean compile test
+jobs:
+  include:
+    - stage: clean
+      script: sbt clean
+    - stage: compile
+      script: sbt compile
+    - stage: test
+      script: sbt test
