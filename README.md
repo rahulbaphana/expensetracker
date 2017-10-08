@@ -1,5 +1,10 @@
 ![build-status](https://travis-ci.org/rahulbaphana/expensetracker.svg?branch=master)
 
+# ExpenseTracker
+
+## Agenda for Today
+
+
 This is your new Play application
 =================================
 
