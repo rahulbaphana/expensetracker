@@ -9,28 +9,28 @@ class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
 
   "Expense tracker" should  {
     "empty should return 0 amount" in  {
-      val expenseTracker = new ExpenseTracker()
+      val expenseTracker = ExpenseTracker()
 
-      assert(expenseTracker.getTotalAmount == 0)
+      assert(expenseTracker.totalAmount == 0)
     }
 
     "adding an expense should reflect the total amount" in {
-      val expenseTracker = new ExpenseTracker()
+      val expenseTracker = ExpenseTracker()
 
-      val expenseAfterAddition = expenseTracker.add(new Expense(100))
+      val expenseAfterAddition = expenseTracker.add(Expense(100))
 
-      assert(expenseAfterAddition.getTotalAmount == 100)
+      assert(expenseAfterAddition.totalAmount == 100)
     }
 
     "adding multiple expenses should be reflected in the total amount" in {
-      val expenseTracker = new ExpenseTracker()
+      val expenseTracker = ExpenseTracker()
 
       val expenseAfterTwoAdditions = expenseTracker.add(
-        new Expense(100),
-        new Expense(200)
+        Expense(100),
+        Expense(200)
       )
 
-      assert(expenseAfterTwoAdditions.getTotalAmount == 300)
+      assert(expenseAfterTwoAdditions.totalAmount == 300)
     }
   }
 

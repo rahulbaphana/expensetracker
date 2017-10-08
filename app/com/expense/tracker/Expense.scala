@@ -1,3 +1,3 @@
 package com.expense.tracker
 
-class Expense(val price: Int)
+case class Expense(price: Int)
