@@ -11,6 +11,14 @@ class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
       expenseTracker.totalAmount mustBe 0
     }
 
+    "return 0 amount when no expenses to add" in  {
+      val expenseTracker = ExpenseTracker()
+
+      val trackerAfterAddition = expenseTracker.add()
+
+      trackerAfterAddition.totalAmount mustBe 0
+    }
+
     "adding an expense should reflect the total amount" in {
       val expenseTracker = ExpenseTracker()
 
