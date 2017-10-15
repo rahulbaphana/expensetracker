@@ -1,6 +1,8 @@
 package com.expense.tracker
 
 case class ExpenseTracker(totalAmount: Int = 0) {
+  def getExpensesFor(category: String): List[Expense] = ???
+
 
   def add(expenses: Expense*) = {
     expenses.toList match {

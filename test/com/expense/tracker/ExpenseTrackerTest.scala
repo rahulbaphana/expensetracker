@@ -1,5 +1,7 @@
 package com.expense.tracker
 
+import com.expense.tracker
+import org.scalatest.Matchers.convertToAnyShouldWrapper
 import org.scalatestplus.play._
 
 class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
@@ -36,6 +38,18 @@ class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
       )
 
       expenseAfterTwoAdditions.totalAmount mustBe 300
+    }
+
+    "allow the expense to be categorised" in {
+      val expenseTracker = ExpenseTracker()
+
+      val expensesForFood = expenseTracker.add(
+        Expense(100, "Food"),
+        Expense(200, "Food"),
+        Expense(2000, "Electronics")
+      ).getExpensesFor("Food")
+
+      expensesForFood should equal(List(Expense(100, "Food"), Expense(200, "Food")))
     }
   }
 
