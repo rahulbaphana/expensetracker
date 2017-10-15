@@ -5,7 +5,7 @@ import org.scalatestplus.play._
 class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
 
   "Expense tracker" should  {
-    "empty should return 0 amount" in  {
+    "return 0 amount when initialized" in  {
       val expenseTracker = ExpenseTracker()
 
       expenseTracker.totalAmount mustBe 0
@@ -19,7 +19,7 @@ class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
       trackerAfterAddition.totalAmount mustBe 0
     }
 
-    "adding an expense should reflect the total amount" in {
+    "add an expense and reflect the total amount" in {
       val expenseTracker = ExpenseTracker()
 
       val expenseAfterAddition = expenseTracker.add(Expense(100))
@@ -27,7 +27,7 @@ class ExpenseTrackerTest extends PlaySpec with OneAppPerTest {
       expenseAfterAddition.totalAmount mustBe 100
     }
 
-    "adding multiple expenses should be reflected in the total amount" in {
+    "add multiple expenses and reflect in the total amount" in {
       val expenseTracker = ExpenseTracker()
 
       val expenseAfterTwoAdditions = expenseTracker.add(
